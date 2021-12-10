@@ -1,0 +1,27 @@
+{
+  "name": "studion",
+  "version": "1.0.0",
+  "description": "homepage studion",
+  "main": "src/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MahRupp/StudiOn.git"
+  },
+  "keywords": [
+    "HTML",
+    "CCS",
+    "JavaScript"
+  ],
+  "author": "Marina Rupp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MahRupp/StudiOn/issues"
+  },
+  "homepage": "https://github.com/MahRupp/StudiOn#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
