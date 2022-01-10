@@ -1,5 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Roboto&display=swap');
 
 * {box-sizing: border-box;}
 
@@ -7,8 +6,10 @@
 {
     font-family: 'Montserrat', sans-serif;
   font-size: 16px;
+  --color-copy: #333; 
   --color-primary:#ffc500;
   --defaut-padding:1rem;
+  color: var(--color-copy)
  }
  
  body {
@@ -17,48 +18,65 @@
    padding-top: 7.1rem;
  }
 
+ header,
+ main,
+ footer {
+   overflow-x: hidden;
+ }
+
+ .container {
+   max-width: 1140px;
+   margin: 0 auto;
+ }
+
  ul {
    display: flex;
    list-style: none;
    padding-left: 0;
-    
   }
 
- .navbar__links li {
-   margin-right: 0.625rem;
-   } 
-
- .navbar {
+    .navbar {
     position: fixed;
     z-index: 1;
-    display: grid;
-    grid-template-columns: 1fr 9fr;
-    align-items: center;
     top: 0;
     left: 0;
-
-    width: 100vw;
-    height: 7.75rem;
-    padding: 0 1rem;
-
+    width: 100%;
     background-color: black;
     color: #fff;
   }
-  .navbar__links {
-    justify-self: end;
-      }
-
-  .navbar__links a {
-    font-weight: 300;
-    color: #fff; 
-    text-decoration: none;
+    
+  .navbar__container {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    align-items: center;
+    
+    width: 100vw;
+    height: 7.75rem;
+    padding: 0 1rem;
   }
 
+  .navbar__links {
+    justify-self: end;
+  }
+  
   .navbar__links li {
-   margin-right: 3rem;
-   font-size: 0.85rem;
-   text-transform: uppercase;
-   } 
+    margin-right: 0.625rem;
+    margin-right: 3rem;
+    text-transform: uppercase;
+    } 
+
+    
+    .navbar__links li {
+      margin-right: 3rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    } 
+    
+    .navbar__links a {
+      font-weight: 300;
+      color: #fff; 
+      text-decoration: none;
+    }
 
   .navbar__links a:hover {
     color: var(--color-primary);
@@ -66,7 +84,7 @@
 
   .logo-studion {
     font-weight: 900;
-    font-size: 38px;
+    font-size: 2.375rem;
     line-height: 1ch;
     text-transform: uppercase;
     text-align: right;
@@ -74,7 +92,7 @@
 
   .logo-studion__subtitle {
     font-weight: 300;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   .copy--primary {
@@ -88,7 +106,7 @@
 
   .slide {
     position: relative;
-    height: calc(100vh - 7.75rem);
+    height: calc(90vh - 7.75rem);
   }
 
   .slide__background-image {
@@ -102,7 +120,7 @@
     position: absolute;
     top: 6.25rem;
     left: 50vw;
-      }
+   }
 
   .slide__copy h6 {
     font-size: 0.9375rem;
@@ -125,25 +143,133 @@
     cursor: pointer;
     padding: 1rem 2.5rem;
     border: 0.125rem solid #fff;
+    border-radius: 5rem;
     color: var(--color-primary);
     background: unset;
-    border-radius: 5rem;
     font-size: .9375rem;
     font-weight: 700;
     text-transform: uppercase;
-    transition: 0.5s all ease;
+    transition: 0.3s all ease;
   }
 
   .btn:hover,
   .btn:active,
-  .btn:focus {
+  .btn:focus,
+  .btn--institutional {
     border-color: var(--color-primary);
     background-color: var(--color-primary);
     color: #fff;
+  }  
+
+#counter {
+  background-color: var(--color-primary);
+  color: #fff;
+  text-transform: uppercase;
+}
+.counter__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  place-items: center;  
+  padding: 4.375rem 1rem;
+}
+
+.counter__container h3 {
+  font-size: 2.1875rem;
   }
-  
-  
-  
-  
+
+.counter__container h3 small {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.institutional {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 3.125rem;
+  align-items: center;
+  padding: 4.375rem;
+}
+
+.institutional__image {
+  max-width: 550px;
+}
+
+.institutional__copy {
+  padding: 0 1.875rem;
+}
+
+.institutional__copy h6 {
+  font-size: .875rem;
+  font-weight: 300;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.institutional__copy h4 {
+  font-size: 1.5625rem;
+  margin-top: 1rem;
+}
+
+.institutional p {
+  font-family: 'roboto', sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6875rem;
+  margin-bottom: 0;
+  margin-bottom: 2.5rem;
+}
+
+.btn--institutional:hover {
+   color:var(--color-copy);
+   background: unset;
+   box-shadow: 0 1rem 1rem #0006;
+}
+
+.quote {
+  background-image:url(/images/parallax.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.quote__container {
+  display: grid;
+  align-items: center;
+  justify-items: end;
+  min-height: 80vh;
+}
+
+.quote__copy {
+  background-color: #fff;
+  padding: 5.625rem 4.375rem;  
+}
+
+.quote__copy h6 {
+  font-size: .9375rem;
+  font-weight: 400;
+  letter-spacing: .1875rem;
+  line-height: 1.4375rem;
+  text-transform: uppercase;
+  max-width: 53ch ;
+  margin: 0;
   }
-  
+
+  .quote__copy h2 {
+    font-size: 5rem;
+    line-height: 5rem;
+    margin: 1.875rem 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -.1875rem;
+  }
+
+  .quote__copy h2 span {
+    display: block;
+  }
+
+  .btn--quote {
+    color: var(--color-copy);
+    border-color: var(--color-copy);
+    background: unset;
+  }
