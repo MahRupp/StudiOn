@@ -1,4 +1,12 @@
 $(document).ready(() => {
+  //menu
+  $('.navbar__meu-btn').on('click', function (){
+    $(".navbar__links").toggleClass("active");
+    $(this).find("i").toggleClass("fa-bars");
+    $(this).find("i").toggleClass("fa-times");
+  });
+
+  //carousel
   const slickOptions = {
     autoplay: true,
     dots: false,
