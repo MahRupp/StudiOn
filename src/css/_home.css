@@ -1,6 +1,7 @@
 .slider {
   background-color: #000;
   color: #fff;
+  margin-top: 7rem;
 }
 
 .slider__prev-arrow,
@@ -10,7 +11,7 @@
   border: 5px solid #fff;
   border-right: unset;
   border-bottom: unset;
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .slider__prev-arrow {
@@ -29,6 +30,16 @@
   content: "";
 }
 
+.slick-arrow {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 1280px) {
+  .slick-arrow {
+    visibility: visible;
+  }
+}
+
 .slide {
   position: relative;
   height: 90vh;
@@ -41,30 +52,70 @@
   object-position: center;
 }
 
+/* Mobile */
+.slide__copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.slide__copy span {
+  display: block;
+}
+
+/*desktop*/
+@media screen and (min-width: 1280px) {
+  .slide__copy {
+    padding-left: 50vw;
+    text-align: left;
+    float: left;
+  }
+
+  .slide__copy span {
+    display: inline;
+  }
+}
+
+/* slide copy que eu tinha antes 
 .slide__copy {
   position: absolute;
   top: 10vh;
   left: 50vw;
-}
+} */
 
 .slide__copy h6 {
   font-size: 0.9375rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1875rem;
+  margin: 0;
 }
 
 .slide__copy h2 {
-  font-size: 6.25rem;
+  /*mobile*/
+  font-size: 3.25rem;
   text-transform: uppercase;
-  line-height: 6.25rem;
+  line-height: 3.25rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .slide__copy h2 {
+    font-size: 6.25rem;
+    line-height: 6.25rem;
+  }
 }
 
 .slide__copy h2 span {
   display: block;
 }
 
-#counter {
+.counter {
   background-color: var(--color-primary);
   color: #fff;
   text-transform: uppercase;
@@ -73,7 +124,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   place-items: center;
-  padding: 4.375rem 1rem;
+  padding: 4.375rem 0;
 }
 
 .counter__container h3 {
@@ -85,20 +136,42 @@
   font-size: 1.25rem;
 }
 
+/*Mobile*/
 .institutional {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   gap: 3.125rem;
   align-items: center;
-  padding: 4.375rem;
+  padding: 0 0 4.375rem 0;
+}
+
+/*Desktop*/
+@media screen and (min-width: 1280px) {
+  .institutional {
+    grid-template-columns: auto auto;
+    padding: 4.375rem;
+  }
 }
 
 .institutional__image {
-  max-width: 550px;
+  max-width: 110vw;
+}
+
+@media screen and (min-width: 1280px) {
+  .institutional__image {
+    max-width: 550px;
+  }
 }
 
 .institutional__copy {
-  padding: 0 1.875rem;
+  padding: 0 1rem 1.875rem 1rem; /*mobile*/
+}
+
+/* Desktop*/
+@media screen and (min-width: 1280px) {
+  .institutional__copy {
+    padding: 0 1.875rem;
+  }
 }
 
 .institutional__copy h6 {
@@ -124,22 +197,42 @@
 
 .quote {
   background-image: url(/images/parallax.jpg);
-  background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-size: auto 40%;
+  background-position: 40% top;
+}
+
+@media screen and (min-width: 1280px) {
+  .quote {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .quote__container {
   display: grid;
-  align-items: center;
+  align-items: end;
   justify-items: end;
   min-height: 80vh;
 }
 
+@media screen and (min-width: 1280px) {
+  .quote__container {
+    align-items: center;
+  }
+}
+
 .quote__copy {
   background-color: #fff;
-  padding: 5.625rem 4.375rem;
+  padding: 1rem;
+  padding-bottom: 4rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .quote__copy {
+    padding: 5.625rem 4.375rem;
+  }
 }
 
 .quote__copy h6 {
@@ -153,8 +246,8 @@
 }
 
 .quote__copy h2 {
-  font-size: 5rem;
-  line-height: 5rem;
+  font-size: 4rem;
+  line-height: 4rem;
   margin: 1.875rem 0;
   text-transform: uppercase;
   font-weight: 700;
@@ -163,4 +256,15 @@
 
 .quote__copy h2 span {
   display: block;
+}
+
+@media screen and (min-width: 1280px) {
+  .quote__copy h6 {
+    font-size: 0.9375rem;
+  }
+
+  .quote__copy h2 {
+    font-size: 5rem;
+    line-height: 5rem;
+  }
 }
